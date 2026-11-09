@@ -1,0 +1,313 @@
+[
+  {
+    "id": 1,
+    "image": "/projects/store-backend/architecture-diagram.png",
+    "title": "Enterprise E-Commerce Backend mit funktionaler Programmierung",
+    "tech": ".NET 9 - Funktionale Programmierung (LanguageExt) - Clean Architecture - CQRS - DDD - SignalR - Redis - RabbitMQ",
+    "desc": "Ein produktionsreifes E-Commerce-Backend im Enterprise-Stil mit funktionalen Programmierparadigmen, Railway-Oriented Programming und einem benutzerdefinierten Domain Monad DB-Muster für eleganten Datenzugriff. Entwickelt mit Clean Architecture, Domain-Driven Design und rein funktionaler Fehlerbehandlung ohne Exception-basierte Ablaufsteuerung.",
+    "gallery": [
+      {
+        "image": "/diagram.png",
+        "title": "Modulare Monolith-Architektur",
+        "description": "7 unabhängige Geschäftsmodule: Identity, Product, Basket, Inventory, Order, Payment und Shipment mit strengen Bounded Contexts"
+      },
+      {
+        "image": "/railway.png",
+        "title": "Funktionale Programmierung mit Railway-Oriented Programming",
+        "description": "Elegante Fehlerbehandlung mit Fin<T> Monaden, IO-Effekten und komponierbaren Datenzugriffmustern mit LanguageExt"
+      },
+      {
+        "image": "/monad.lifting.png",
+        "title": "Domain Monad DB-Muster",
+        "description": "Benutzerdefinierte funktionale Datenzugriffsschicht mit IO-Monade für Datenbankoperationen und automatischer Transaktionsverwaltung"
+      },
+      {
+        "image": "/monad-binding.png",
+        "title": "Monad DB-Bindungen",
+        "description": "Implementierungsdetails der Monad DB-Bindungen"
+      },
+      {
+        "image": "/centralized-cache.png",
+        "title": "Monadische Caching-Strategie",
+        "description": "Verteilte Caching-Implementierung unter Verwendung eines angepassten Db-Monads für Side-Effect-Management"
+      },
+      {
+        "image": "/centralized-data-access.png",
+        "title": "Generisches Repository-Muster",
+        "description": "Implementierung eines generischen Repositorys unter Verwendung des Db-Monads für typsicheren, komponierbaren Datenzugriff mit Paginierungsunterstützung"
+      }
+    ],
+    "features": [
+      "Funktionales Programmierparadigma im gesamten Code mit LanguageExt",
+      "Railway-Oriented Programming mit Fin<T> für explizite Fehlerbehandlung (keine Exceptions)",
+      "Benutzerdefiniertes Domain Monad DB-Muster für komponierbare, testbare Datenzugriffsoperationen",
+      "IO-Monade für Seiteneffekt-Management und referentielle Transparenz",
+      "Modularer Monolith mit 7 unabhängigen Geschäftsmodulen (Product, Order, Basket, Payment, Shipment, Inventory, Identity)",
+      "Echtzeit-Benachrichtigungen via SignalR mit Redis Backplane (Bestandswarnungen, Bestellaktualisierungen, Sendungsverfolgung)",
+      "Erweiterte Authentifizierung (JWT mit Refresh-Tokens, rollenbasierte Zugriffskontrolle, berechtigungsbasierte Autorisierung)",
+      "Stripe-Zahlungsintegration mit Webhook-Handling und idempotenter Verarbeitung",
+      "Event-Driven Architektur mit RabbitMQ und MassTransit für Inter-Modul-Kommunikation",
+      "Multi-Varianten-Produktunterstützung (Farben, Größen) mit dynamischer Bestandsverwaltung",
+      "Produkt-Abonnementsystem für Wiedervorrätigkeits-Benachrichtigungen",
+      "Multi-Datenbank-Strategie (SQL Server, PostgreSQL, Redis) für optimierte Persistenz",
+      "Docker Compose Infrastruktur mit Health Checks für alle Services"
+    ],
+    "functionalProgrammingHighlights": [
+      {
+        "pattern": "Railway-Oriented Programming (ROP)",
+        "description": "Alle Geschäftsoperationen geben Fin<T> für explizite Erfolgs-/Fehlerbehandlung zurück",
+        "example": "Fin<Product> eliminiert try-catch-Blöcke und macht Fehlerbehandlung komponierbar"
+      },
+      {
+        "pattern": "IO-Monade für Seiteneffekte",
+        "description": "Datenbankoperationen, Datei-Uploads und externe API-Aufrufe in IO<T> gekapselt",
+        "example": "IO<Unit> für Datenbankspeicherungen gewährleistet referentielle Transparenz und Testbarkeit"
+      },
+      {
+        "pattern": "Domain Monad DB-Muster",
+        "description": "Benutzerdefinierte funktionale Datenzugriffsschicht mit komponierbaren LINQ-Ausdrücken",
+        "example": "GetEntity, GetEntities, GetUpdateEntity geben IO-Monaden für reine Komposition zurück"
+      },
+      {
+        "pattern": "Funktor/Applikativ/Monade-Operationen",
+        "description": "Map, Bind, Traverse, Fold für Datentransformationen",
+        "example": "Traverse für Validierungssequenzen, Fold für Aggregationen, Bind für Verkettung von Operationen"
+      },
+      {
+        "pattern": "Option-Typ",
+        "description": "Ersetzt Null-Referenzen durch explizite Option<T>-Typen",
+        "example": "Optional(product) verhindert NullReferenceException zur Compile-Zeit"
+      },
+      {
+        "pattern": "Unveränderliche Datenstrukturen",
+        "description": "Alle Entitäten verwenden C#-Records für strukturelle Gleichheit und Unveränderlichkeit",
+        "example": "record Product gewährleistet Thread-Sicherheit und verhindert Mutations-Bugs"
+      },
+      {
+        "pattern": "LINQ Query-Ausdrücke",
+        "description": "Monadische Komposition mit from...select-Syntax für lesbaren Code",
+        "example": "from user in GetUser() from order in CreateOrder(user) select order"
+      }
+    ],
+    "domainMonadDBExamples": [
+      {
+        "operation": "GetEntity<TContext, TEntity>",
+        "description": "Einzelne Entität mit Prädikat und optionalen Includes abrufen",
+        "signature": "IO<TEntity>",
+        "usage": "Komponierbare Abfrage, die IO-Monade zurückgibt, wird bei RunAsync-Aufruf lazy ausgeführt"
+      },
+      {
+        "operation": "GetEntities<TContext, TEntity>",
+        "description": "Mehrere Entitäten mit Filterung und Includes abrufen",
+        "signature": "IO<IEnumerable<TEntity>>",
+        "usage": "Verwandte Daten mit Split-Queries für Leistungsoptimierung laden"
+      },
+      {
+        "operation": "GetUpdateEntity<TContext, TEntity>",
+        "description": "Entität laden, aktualisieren und in einer Operation verfolgen",
+        "signature": "IO<TEntity>",
+        "usage": "Automatische Änderungsverfolgung mit optionalen Post-Update-Transformationen"
+      },
+      {
+        "operation": "GetEntitiesWithPagination<TContext, TEntity>",
+        "description": "Paginierte Abfragen mit Sortierung und Filterung",
+        "signature": "IO<PaginatedResult<TDto>>",
+        "usage": "Effiziente Paginierung mit Gesamtanzahl und Projektion auf DTOs"
+      },
+      {
+        "operation": "RunSaveAsync / RunAsync",
+        "description": "IO-Monade mit automatischer Transaktion und Fehlerbehandlung ausführen",
+        "signature": "Task<Fin<T>>",
+        "usage": "Konvertiert IO<Fin<T>> zu Task<Fin<T>> mit Datenbank-Kontextverwaltung"
+      }
+    ],
+    "codeExamples": [
+      {
+        "title": "Railway-Oriented Programming - Produkt-Update Handler",
+        "code": "public async Task<Fin<Unit>> Handle(UpdateProductCommand cmd, CancellationToken ct)\n{\n    var db = \n        from alternatives in GetEntities<Product>(p => cmd.AlternativeIds.Contains(p.Id))\n        from _ in GetUpdateEntity<Product>(\n            p => p.Id == cmd.ProductId,\n            NotFoundError.New(\"Product not found\"),\n            opt => opt.AddInclude(p => p.Alternatives),\n            product => product.Update(cmd.Dto, alternatives))\n        select unit;\n\n    return await db.RunSaveAsync(dbContext, EnvIO.New(null, ct));\n}",
+        "explanation": "LINQ-Query-Ausdruck komponiert Datenbankoperationen. Jedes 'from' ist eine Bind-Operation. Fehler propagieren automatisch durch Fin<T>. Keine try-catch-Blöcke erforderlich."
+      },
+      {
+        "title": "IO-Monade für Seiteneffekte - Bild-Upload",
+        "code": "private IO<Product> UploadProductImages(Product product, UpdateProductDto dto)\n{\n    return imageService.UploadProductImages(\n        dto.Images, dto.IsMain, \n        product.Slug.Value, product.Category.ToString(), product.Brand.Name)\n    .Map(results => product.AddImages([.. results]));\n}",
+        "explanation": "Bild-Upload in IO-Monade gekapselt. Map transformiert das Ergebnis, während es im IO-Kontext bleibt. Seiteneffekte sind explizit und komponierbar."
+      },
+      {
+        "title": "Domain Monad DB - Produkt-Alternativen hinzufügen",
+        "code": "var db =\n    from alternatives in GetEntities<ProductDBContext, Product>(\n        p => command.AlternativeProductIds.Contains(p.Id))\n    from _ in GetUpdateEntity<ProductDBContext, Product>(\n        p => p.Id == command.ProductId,\n        NotFoundError.New($\"Product with ID '{command.ProductId.Value}' not found.\"),\n        opt =>\n        {\n            opt.AsSplitQuery = true;\n            opt = opt.AddInclude(p => p.Alternatives);\n            return opt;\n        },\n        product => product.AddAlternatives([.. alternatives]))\n    select unit;\n\nreturn await db.RunSaveAsync(dbContext, EnvIO.New(null, cancellationToken));",
+        "explanation": "Zuerst alternative Produkte laden, dann Hauptprodukt aktualisieren. Alle Operationen komponierbar und typsicher. Automatische Transaktionsverwaltung. Split-Query-Optimierung."
+      },
+      {
+        "title": "Traversable Validierung - Produkterstellung",
+        "code": "var sizeFitAttribute = dto.SizeFitAttributes\n    .AsIterable()\n    .Traverse(a => Attribute.From(a.Name, a.Description))\n    .Map(it => it.ToList()).As();\n\nvar detailsAttribute = dto.DetailsAttributes.AsIterable()\n    .Traverse(a => Attribute.From(a.Name, a.Description))\n    .Map(it => it.ToList()).As();",
+        "explanation": "Traverse validiert alle Attribute. Wenn eines fehlschlägt, schlägt die gesamte Operation mit dem ersten Fehler fehl. Sammelt alle gültigen Ergebnisse. Keine foreach-Schleifen oder Mutation."
+      },
+      {
+        "title": "Applikative Funktor - Validierungen kombinieren",
+        "code": "return (\n    Slug.From(dto.Slug),\n    Brand.From(dto.Brand),\n    Category.From(dto.Category, dto.SubCategory)(productType),\n    Description.From(10, 1000, dto.Description),\n    Discount.From(dto.Price, dto.NewPrice),\n    productType,\n    sizeFitAttribute,\n    detailsAttribute,\n    materialDetails\n).Apply((slug, brand, category, description, discount, type, sfAttr, dtAttr, md) => \n    new Product(slug, brand, category, description, dto.Price, dto.NewPrice, \n                discount, sfAttr, dtAttr, md, type)\n).As();",
+        "explanation": "Apply kombiniert 9 Validierungen. Alle müssen erfolgreich sein oder Operation schlägt mit erstem Fehler fehl. Validiert konzeptionell parallel. Erstellt Product nur bei allen gültigen."
+      },
+      {
+        "title": "Option-Typ - Benutzersitzungsverwaltung",
+        "code": "var restoreSubscriptions =\n    from userIdGuid in parseUserId(userId)\n    from user in getUserById(userIdGuid)\n    from _ in restoreUserSubscriptions(user, userId)\n    select unit;\n\nvar result = await restoreSubscriptions.RunSafeAsync(EnvIO.New());\n\nresult.Match(\n    _ => { },\n    err => logger.LogError(err, \"Failed to restore subscriptions\")\n);",
+        "explanation": "UserId parsen, Benutzer abrufen, Abonnements wiederherstellen - jeder Schritt kann fehlschlagen. Option-Typ behandelt Null sicher. Match behandelt Erfolgs-/Fehlerpfade. Keine Null-Prüfungen erforderlich."
+      }
+    ],
+    "techHighlights": [
+      "LanguageExt-Bibliothek für funktionale Programmierkonstrukte in C#",
+      "Benutzerdefiniertes Domain Monad DB-Muster für eleganten Datenzugriff",
+      "Railway-Oriented Programming eliminiert Exception-basierte Ablaufsteuerung",
+      "Clean Architecture mit strikten Abhängigkeitsregeln",
+      "CQRS-Muster mit MediatR für Command/Query-Trennung",
+      "Domain-Driven Design taktische Muster (Aggregates, Value Objects, Domain Events)",
+      "SignalR mit Redis Backplane für horizontale Skalierung",
+      "RabbitMQ und MassTransit für zuverlässige nachrichtenbasierte Kommunikation",
+      "Multi-Datenbank-Unterstützung (SQL Server für Schreibvorgänge, PostgreSQL für Lesevorgänge, Redis für Cache)",
+      "Entity Framework Core mit erweiterten Query-Optimierungen",
+      "Umfassende Unit- und Integrationstests mit xUnit und Testcontainers",
+      "OpenAPI/Swagger-Dokumentation mit Beispielen"
+    ],
+    "timeline": "",
+    "status": "In Bearbeitung"
+  },
+  {
+    "id": 2,
+    "image": "/projects/store-frontend/landing.png",
+    "title": "Store Frontend - Moderner React E-Commerce Client",
+    "tech": "Next.js 16 - React 19 - TypeScript - Redux Toolkit (RTK Query) - SignalR - Tailwind CSS - Framer Motion - Stripe Elements",
+    "desc": "Eine hochmoderne, responsive E-Commerce-Frontend-Anwendung, gebaut mit Next.js App Router und Feature-Sliced Design. Optimiert für Performance und Echtzeit-Benutzererlebnisse mit WebSocket-Integration.",
+    "github": "https://github.com/atMou/Store-Frontend",
+    "gallery": [
+      {
+        "image": "/projects/store-frontend/dashboard.png",
+        "title": "Interaktives Dashboard",
+        "description": "Echtzeit-Admin-Dashboard mit ApexCharts-Visualisierungen für Verkäufe, Umsatz und Bestellanalysen"
+      },
+      {
+        "image": "/projects/store-frontend/product-details.png",
+        "title": "Atomares Komponenten-Design",
+        "description": "Hochgradig wiederverwendbare UI-Komponenten, organisiert nach Atoms, Molecules und Organisms für ein konsistentes Design-System"
+      },
+      {
+        "image": "/projects/store-frontend/payment-flow.png",
+        "title": "Sichere Zahlungsintegration",
+        "description": "Nahtloses Checkout-Erlebnis mit Stripe React Elements und Echtzeit-Statusaktualisierungen via SignalR"
+      },
+      {
+        "image": "/projects/store-frontend/realtime-notifications.png",
+        "title": "Echtzeit-WebSocket-Updates",
+        "description": "Sofortige Benachrichtigungen für Bestellstatusänderungen, Bestandswarnungen und Sendungsverfolgung mit SignalR Hub-Verbindung"
+      }
+    ],
+    "features": [
+      "Next.js 15 App Router mit Trennung von Server- und Client-Komponenten",
+      "Feature-basierte Architektur (features/auth, features/product, etc.) für bessere Wartbarkeit",
+      "State Management mit Redux Toolkit und Persistierung via redux-persist",
+      "Datenabruf & Caching mit RTK Query (automatische Tag-Invalidierung)",
+      "Echtzeit-bidirektionale Kommunikation mit Microsoft SignalR",
+      "Atomic Design Pattern (Atoms, Molecules, Organisms, Templates)",
+      "Formularverwaltung mit React Hook Form und Zod-Schema-Validierung",
+      "Rollenbasierte Zugriffskontrolle (RBAC) mit HOCs (WithAuth, WithRole, WithPermission)",
+      "Stripe Payment Elements Integration für sichere Transaktionen",
+      "Dynamische Dashboards mit ApexCharts für Datenvisualisierung",
+      "Internationalisierungs-Infrastruktur (i18n)",
+      "Optimistische UI-Updates für sofortiges Benutzerfeedback",
+      "Flüssige Animationen mit Framer Motion für Seitenübergänge und Mikro-Interaktionen",
+      "Benutzerdefinierte UI-Komponentenbibliothek basierend auf Radix UI Primitives"
+    ],
+    "frontendPatterns": [
+      {
+        "pattern": "Feature-Sliced Design",
+        "description": "Codebase organisiert nach Geschäftsbereichen (features/) statt technischen Schichten, mit strikten öffentlichen APIs für jede Feature.",
+        "example": "features/cart/ exportiert nur das, was andere Module benötigen, via index.ts"
+      },
+      {
+        "pattern": "Higher-Order Components (HOCs)",
+        "description": "Wiederverwendbare Logik-Wrapper für Authentifizierungs- und Autorisierungslogik.",
+        "example": "WithAuth(DashboardPage) oder WithRole(AdminPanel, ['Admin'])"
+      },
+      {
+        "pattern": "RTK Query API Injection",
+        "description": "Code-Splitting für API-Definitionen mit injectEndpoints, um die Basis-API sauber und Features unabhängig zu halten.",
+        "example": "productApi.injectEndpoints({ endpoints: (builder) => ({ ... }) })"
+      },
+      {
+        "pattern": "Atomic Design Methodologie",
+        "description": "Strikte Trennung von UI-Komponenten in Atoms (Inputs), Molecules (SearchBars) und Organisms (ProductCards).",
+        "example": "components/molecules/QuantitySelector.tsx komponiert atoms/Button.tsx"
+      },
+      {
+        "pattern": "Custom Hook Abstraktionen",
+        "description": "Trennung von View-Logik und UI-Komponenten durch Custom Hooks.",
+        "example": "useProductFilters() verwaltet URL-Suchparameter und lokale State-Synchronisation"
+      }
+    ],
+    "stateManagement": [
+      {
+        "store": "Redux Toolkit",
+        "description": "Globaler State für Warenkorb, Benutzersitzung und UI-Einstellungen",
+        "persistence": "localStorage via redux-persist mit SSR-Reconciliation"
+      },
+      {
+        "store": "RTK Query",
+        "description": "Server-State-Management, Caching und automatisches Neuladen bei Cache-Invalidierung",
+        "cacheStrategy": "Tag-basierte Invalidierung (z.B. 'Product', 'Order')"
+      },
+      {
+        "store": "URL State",
+        "description": "Suchfilter, Paginierung und Sortierung in URL-Koordinaten persistiert",
+        "implementation": "useSearchParams und Next.js Router Integration"
+      }
+    ],
+    "moduleDescriptions": [
+      {
+        "module": "Auth",
+        "responsibility": "Login/Registrierungs-Formulare, Passwort-Reset-Flows und JWT-Token-Verwaltung",
+        "components": "LoginForm, RegisterForm, WithAuth HOC"
+      },
+      {
+        "module": "Category",
+        "responsibility": "Kategorie-Navigation, dynamische Tab-Panels (Männer/Frauen/Kinder) und Karussells",
+        "components": "TabPanel, MainCategoryList, SubCategoryItem"
+      },
+      {
+        "module": "Product",
+        "responsibility": "Produkt-Grids, Detail-Ansichten, Filter-Logik und Bildergalerien",
+        "components": "ProductCard, ProductFilter, ImageUploader"
+      },
+      {
+        "module": "Cart",
+        "responsibility": "Warenkorb-Verwaltung, Mengen-Updates und Preisberechnungen",
+        "components": "CartDrawer, CartItem, CheckoutSummary"
+      },
+      {
+        "module": "Order",
+        "responsibility": "Bestellhistorie, Detailansichten und Status-Tracking",
+        "components": "OrderList, OrderStatusBadge, TrackingTimeline"
+      },
+      {
+        "module": "Notifications",
+        "responsibility": "SignalR-Verbindungsverwaltung und Toast-Benachrichtigungs-Anzeige",
+        "components": "NotificationProvider, Toast, NotificationIcon"
+      },
+      {
+        "module": "Payment",
+        "responsibility": "Stripe Elements Wrapper und Payment-Intent-Handling",
+        "components": "PaymentForm, CheckoutProvider"
+      }
+    ],
+    "techHighlights": [
+      "Next.js 16 mit Turbopack für schnelle Entwicklung",
+      "React 19 mit neuesten Hooks und Concurrent Features",
+      "TypeScript Strict Mode für Typ-Sicherheit",
+      "Tailwind CSS mit 'cn' Utility für bedingtes Styling",
+      "SignalR Client mit automatischen Reconnection-Richtlinien",
+      "Radix UI für zugängliche Headless UI Primitives",
+      "Zod-Schema-Validierung für robuste Formular-Behandlung",
+      "ApexCharts für responsive Datenvisualisierung",
+      "ESLint + Prettier Konfiguration für Code-Qualität"
+    ],
+    "timeline": "",
+    "status": "In Bearbeitung"
+  }
+]

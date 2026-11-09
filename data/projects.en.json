@@ -1,0 +1,334 @@
+[
+  {
+    "id": 1,
+    "image": "/diagram.png",
+    "title": "Store Backend - Enterprise E-Commerce Platform",
+    "tech": ".NET 9 - C# 13 - LanguageExt - MassTransit - SignalR - Entity Framework Core 9 - Stripe - SendGrid",
+    "desc": "A modern e-commerce backend built with Domain-Driven Design (DDD), Functional Programming, and Event-Driven Architecture. Features modular monolith architecture with 7 bounded contexts, real-time notifications, and complete e-commerce workflows.  ",
+    "github": "https://github.com/atMou/Store-Backend",
+    "gallery": [
+      {
+        "image": "/diagram.png",
+        "title": "Modular Monolith Architecture",
+        "description": "7 independent business modules: Identity, Product, Basket, Inventory, Order, Payment, and Shipment with strict bounded contexts"
+      },
+      {
+        "image": "/railway.png",
+        "title": "Functional Programming with Railway-Oriented Programming",
+        "description": "Elegant error handling using Fin<T> monads, IO effects, and composable data access patterns with LanguageExt"
+      },
+      {
+        "image": "/monad.lifting.png",
+        "title": "Domain Monad DB Pattern",
+        "description": "Custom functional data access layer using IO monad for database operations with automatic transaction management"
+      },
+
+      {
+        "image": "/monad-binding.png",
+        "title": "Monad DB Bindings",
+        "description": "Implementation details showing Monad DB bindings"
+      },
+      {
+        "image": "/centralized-cache.png",
+        "title": "Monadic Caching Strategy",
+        "description": "Distributed caching implementation using customized Db Monad for side-effect management"
+      },
+      {
+        "image": "/centralized-data-access.png",
+        "title": "Generic Repository Pattern",
+        "description": "Generic repository implementation using Db Monad for type-safe, composable data access with pagination support"
+      }
+    ],
+    "features": [
+      "Domain-Driven Design with modular monolith architecture and bounded contexts",
+      "Functional Programming paradigm using LanguageExt throughout the codebase",
+      "Railway-Oriented Programming with Fin<T> for explicit error handling",
+      "Event-Driven Architecture using MassTransit for integration events",
+      "Real-time notifications via SignalR (payment, orders, shipment tracking, delivery)",
+      "CQRS pattern with MediatR for command/query separation",
+      "Custom Domain Monad DB pattern for composable database operations",
+      "IO monad for side-effect management and referential transparency",
+      "Option Type for null safety eliminating NullReferenceException",
+      "7 business modules: Identity, Product, Basket, Inventory, Order, Payment, Shipment",
+      "Stripe payment integration with webhook handling and idempotent processing",
+      "JWT authentication with role and permission-based authorization",
+      "Email system with SendGrid integration and HTML templates",
+      "Dynamic shipping cost calculation (free shipping over $29.50)",
+      "Multi-variant product support with dynamic inventory management",
+      "Automatic tracking code generation for shipments",
+      "Entity Framework Core 9 with code-first migrations"
+    ],
+    "functionalProgrammingHighlights": [
+      {
+        "pattern": "Railway-Oriented Programming (ROP)",
+        "description": "All business operations return Fin<T> for explicit success/failure handling. Errors propagate automatically without exceptions.",
+        "example": "from cart in GetCart() from order in CreateOrder(cart) select order - Composable error handling"
+      },
+      {
+        "pattern": "IO Monad for Side Effects",
+        "description": "Database operations, file uploads, and external API calls wrapped in IO<T> for referential transparency",
+        "example": "IO<Unit> for database saves ensures testability and pure functions"
+      },
+      {
+        "pattern": "Domain Monad DB Pattern",
+        "description": "Custom functional data access layer with GetEntity, GetEntities, GetUpdateEntity returning IO monads",
+        "example": "Composable LINQ expressions that execute lazily with automatic transaction management"
+      },
+      {
+        "pattern": "Option Type for Null Safety",
+        "description": "Replaces null references with explicit Option<T> types preventing NullReferenceException at compile time",
+        "example": "Optional(user) returns Some(user) or None instead of null"
+      },
+      {
+        "pattern": "Try Monad for Exception Handling",
+        "description": "Captures exceptions as values using Try<T> for safer error handling",
+        "example": "Try.lift(() => NotifyUser()).Run().IfFail(ex => LogError(ex))"
+      },
+      {
+        "pattern": "Functor/Applicative/Monad Operations",
+        "description": "Map, Bind, Traverse, Fold for data transformations without mutation",
+        "example": "Traverse validates collections, Apply combines multiple validations"
+      },
+      {
+        "pattern": "Immutable Data Structures",
+        "description": "All entities use C# records for structural equality and immutability ensuring thread-safety",
+        "example": "record Order with { Status = OrderStatus.Paid } - No mutation"
+      }
+    ],
+    "dddPatterns": [
+      {
+        "pattern": "Aggregates & Entities",
+        "description": "Root entities that enforce invariants and encapsulate business logic",
+        "example": "Order aggregate manages OrderItems, validates state transitions, and raises domain events"
+      },
+      {
+        "pattern": "Value Objects",
+        "description": "Immutable objects defined by their attributes (Money, Email, Address)",
+        "example": "Money.FromDecimal(100) ensures non-negative values, Email.From(string) validates format"
+      },
+      {
+        "pattern": "Domain Events",
+        "description": "Events raised by aggregates to signal important state changes",
+        "example": "OrderCreatedDomainEvent, PaymentFulfilledIntegrationEvent for cross-module communication"
+      },
+      {
+        "pattern": "Repositories",
+        "description": "Functional repositories using Db Monad pattern for composable queries",
+        "example": "from order in GetEntity() from updated in UpdateEntity() select updated"
+      },
+      {
+        "pattern": "Bounded Contexts",
+        "description": "7 independent modules with clear boundaries communicating via integration events",
+        "example": "Payment module publishes PaymentFulfilledEvent consumed by Order and Shipment modules"
+      }
+    ],
+    "moduleDescriptions": [
+      {
+        "module": "Identity",
+        "responsibility": "User management, authentication, JWT tokens, roles and permissions",
+        "entities": "User, Role, Permission"
+      },
+      {
+        "module": "Product",
+        "responsibility": "Product catalog, variants (color, size), reviews, and subscriptions",
+        "entities": "Product, ColorVariant, SizeVariant, Review"
+      },
+      {
+        "module": "Basket",
+        "responsibility": "Shopping cart, line items, coupons, and shipping cost calculation",
+        "entities": "Cart, LineItem, Coupon"
+      },
+      {
+        "module": "Inventory",
+        "responsibility": "Stock management, warehouse operations, and inventory tracking",
+        "entities": "Inventory, Stock, Warehouse"
+      },
+      {
+        "module": "Order",
+        "responsibility": "Order processing, lifecycle management, and order status tracking",
+        "entities": "Order, OrderItem, OrderStatus"
+      },
+      {
+        "module": "Payment",
+        "responsibility": "Stripe payment processing, payment intents, and webhook handling",
+        "entities": "Payment, PaymentIntent, PaymentStatus"
+      },
+      {
+        "module": "Shipment",
+        "responsibility": "Shipping management, tracking codes, and delivery notifications",
+        "entities": "Shipment, TrackingCode, ShipmentStatus"
+      }
+    ],
+    "eventFlowExample": [
+      "1. User adds items to cart",
+      "2. User checks out → CartCheckedOutIntegrationEvent",
+      "3. Order module creates order → OrderCreatedIntegrationEvent",
+      "4. Payment module creates Stripe payment intent",
+      "5. User completes payment → PaymentFulfilledIntegrationEvent",
+      "6. Order marked as paid → Real-time notification sent via SignalR",
+      "7. Shipment module creates shipment → ShipmentCreatedIntegrationEvent",
+      "8. Email sent with tracking code via SendGrid",
+      "9. Shipment status updates → Real-time notifications",
+      "10. Delivered → ShipmentDeliveredIntegrationEvent → Notification"
+    ],
+    "techHighlights": [
+      ".NET 9 with C# 13 latest language features",
+      "LanguageExt library for functional programming (Fin<T>, Option<T>, IO<T>, Try<T>)",
+      "MassTransit for distributed messaging with RabbitMQ",
+      "SignalR with Redis backplane for real-time horizontal scaling",
+      "Entity Framework Core 9 with code-first migrations",
+      "MediatR for CQRS pattern implementation",
+      "Stripe API for payment processing with webhook security",
+      "SendGrid for email delivery with HTML templates",
+      "Twilio for SMS notifications",
+      "Cloudinary for image storage and optimization",
+      "SQL Server for relational data persistence",
+      "JWT authentication with refresh tokens",
+      "xUnit and Testcontainers for testing",
+      "OpenAPI/Swagger for API documentation"
+    ],
+    "timeline": "",
+    "status": "In Progress"
+  },
+  {
+    "id": 2,
+    "image": "/projects/store-frontend/landing.png",
+    "title": "Store Frontend - Modern React E-Commerce Client",
+    "tech": "Next.js 16 - React 19 - TypeScript - Redux Toolkit (RTK Query) - SignalR - Tailwind CSS - Framer Motion - Stripe Elements",
+    "desc": "E-commerce frontend application built with Next.js App Router and Feature-Sliced Design. optimized for performance and real-time user experiences with WebSocket integration.",
+    "github": "https://github.com/atMou/Store-Frontend",
+    "gallery": [
+      {
+        "image": "/projects/store-frontend/dashboard.png",
+        "title": "Interactive Dashboard",
+        "description": "Real-time admin dashboard with ApexCharts visualizations for sales, revenue, and order analytics"
+      },
+      {
+        "image": "/projects/store-frontend/product-details.png",
+        "title": "Atomic Component Design",
+        "description": "Highly reusable UI components organized by atoms, molecules, and organisms for consistent design system"
+      },
+      {
+        "image": "/projects/store-frontend/payment-flow.png",
+        "title": "Secure Payment Integration",
+        "description": "Seamless checkout experience using Stripe React Elements with real-time status updates via SignalR"
+      },
+      {
+        "image": "/projects/store-frontend/realtime-notifications.png",
+        "title": "Real-Time WebSocket Updates",
+        "description": "Instant notifications for order status changes, stock alerts, and delivery tracking using SignalR Hub connection"
+      }
+    ],
+    "features": [
+      "Next.js 15 App Router with Server & Client Component separation",
+      "Feature-Based Architecture (features/auth, features/product, etc.) for maintainability",
+      "State Management with Redux Toolkit and persistence via redux-persist",
+      "Data Fetching & Caching with RTK Query (automatic tag invalidation)",
+      "Real-time bidirectional communication using Microsoft SignalR",
+      "Atomic Design Pattern (Atoms, Molecules, Organisms, Templates)",
+      "Form Management with React Hook Form and Zod schema validation",
+      "Role-Based Access Control (RBAC) with HOCs (WithAuth, WithRole, WithPermission)",
+      "Stripe Payment Elements integration for secure transactions",
+      "Dynamic dashboards with ApexCharts for data visualization",
+      "Internationalization (i18n) support infrastructure",
+      "Optimistic UI updates for immediate user feedback",
+      "Smooth animations with Framer Motion for page transitions and micro-interactions",
+      "Custom UI component library built on Radix UI primitives"
+    ],
+    "frontendPatterns": [
+      {
+        "pattern": "Feature-Sliced Design",
+        "description": "Codebase organized by business domains (features/) rather than technical layers, with strict public APIs for each feature.",
+        "example": "features/cart/ exports only what other modules need via index.ts"
+      },
+      {
+        "pattern": "High-Order Components (HOCs)",
+        "description": " reusable logic wrappers for authentication and authorization logic.",
+        "example": "WithAuth(DashboardPage) or WithRole(AdminPanel, ['Admin'])"
+      },
+      {
+        "pattern": "RTK Query API Injection",
+        "description": "Code splitting for API definition using injectEndpoints to keep the base API clean and features independent.",
+        "example": "productApi.injectEndpoints({ endpoints: (builder) => ({ ... }) })"
+      },
+      {
+        "pattern": "Atomic Design Methodology",
+        "description": "Strict separation of UI components into Atoms (Inputs), Molecules (SearchBars), and Organisms (ProductCards).",
+        "example": "components/molecules/QuantitySelector.tsx composes atoms/Button.tsx"
+      },
+      {
+        "pattern": "Custom Hook Abstrations",
+        "description": "Separation of view logic from UI components using custom hooks.",
+        "example": "useProductFilters() manages URL search params and local state sync"
+      }
+    ],
+    "stateManagement": [
+      {
+        "store": "Redux Toolkit",
+        "description": "Global state for Shopping Cart, User Session, and UI preferences",
+        "persistence": "localStorage via redux-persist with SSR reconciliation"
+      },
+      {
+        "store": "RTK Query",
+        "description": "Server state management, caching, and automatic refetching on cache invalidation",
+        "cacheStrategy": "Tag-based invalidation (e.g., 'Product', 'Order')"
+      },
+      {
+        "store": "URL State",
+        "description": "Search filters, pagination, and sorting persisted in URL coordinates",
+        "implementation": "useSearchParams and Next.js router integration"
+      }
+    ],
+    "videoUrl": "https://res.cloudinary.com/daxkv13zq/video/upload/e_accelerate:100/v1769553560/products/fakelando_vbcp3z.mp4",
+    "moduleDescriptions": [
+      {
+        "module": "Auth",
+        "responsibility": "Login/Register forms, password reset flows, and JWT token management",
+        "components": "LoginForm, RegisterForm, WithAuth HOC"
+      },
+      {
+        "module": "Category",
+        "responsibility": "Category navigation, dynamic tab panels (Men/Women/Kids), and carousels",
+        "components": "TabPanel, MainCategoryList, SubCategoryItem"
+      },
+      {
+        "module": "Product",
+        "responsibility": "Product grids, details views, filtering logic, and image galleries",
+        "components": "ProductCard, ProductFilter, ImageUploader"
+      },
+      {
+        "module": "Cart",
+        "responsibility": "Shopping cart management, item quantity updates, and price calculations",
+        "components": "CartDrawer, CartItem, CheckoutSummary"
+      },
+      {
+        "module": "Order",
+        "responsibility": "Order history, detailing, and status tracking",
+        "components": "OrderList, OrderStatusBadge, TrackingTimeline"
+      },
+      {
+        "module": "Notifications",
+        "responsibility": "SignalR connection management and toast notification display",
+        "components": "NotificationProvider, Toast, NotificationIcon"
+      },
+      {
+        "module": "Payment",
+        "responsibility": "Stripe Elements wrapper and payment intent handling",
+        "components": "PaymentForm, CheckoutProvider"
+      }
+    ],
+    "techHighlights": [
+      "Next.js 16 with Turbopack for rapid development",
+      "React 19 utilizing newest hooks and concurrent features",
+      "TypeScript strict mode for type safety",
+      "Tailwind CSS with 'cn' utility for conditional styling",
+      "SignalR Client with automatic reconnection policies",
+      "Radix UI for accessible headless UI primitives",
+      "Zod schema validation for robust form handling",
+      "ApexCharts for responsive data visualization",
+      "ESLint + Prettier configuration for code quality"
+    ],
+    "timeline": "",
+    "status": "In Progress"
+  }
+]

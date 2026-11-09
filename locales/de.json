@@ -1,0 +1,229 @@
+{
+  "nav": {
+    "about": "Technische Kenntnisse",
+    "projects": "Projekte",
+    "contact": "Kontakt",
+    "resume": "Lebenslauf",
+    "devMode": "Entwicklermodus",
+    "language": "Sprache"
+  },
+  "hero": {
+    "greeting": "Hey, hier ist Mo",
+    "title": "ABAP Cloud Entwickler",
+    "subtitle": "SAP",
+    "description": "Ein <sap>ABAPer</sap> auf neuen Wegen – ehemaliger .NET- und C#-Liebhaber, jetzt in der <sap>SAP-Welt</sap> zu Hause. <sap>SAP-zertifizierter Back-End-Entwickler</sap> mit Full-Stack-Erfahrung in C#, .NET und TypeScript. Schwerpunkt liegt auf der modernen <sap>SAP-Full-Stack-Entwicklung</sap>: im Backend mit <sap>ABAP Cloud</sap>, <sap>SAP CAP</sap>, <sap>SAP BTP</sap> und <sap>SAP S/4HANA On-Premise</sap> sowie im Frontend mit <sap>SAPUI5 (Freestyle)</sap> und <sap>SAP Fiori Elements</sap>.",
+    "cta": "Lass uns vernetzen!",
+    "resume": "Mein Lebenslauf"
+  },
+  "about": {
+    "title": "Technische Kenntnisse",
+    "sapTechnologies": "SAP-Technologien",
+    "description2": "Ich bin spezialisiert auf Full-Stack-Entwicklung, bin aber immer bereit, neue Tools zu erkunden, wenn sie für die Aufgabe geeignet sind. Wenn ich nicht entwickle, lerne ich wahrscheinlich etwas Neues, um meine Fähigkeiten zu verbessern.",
+    "programmingLanguages": "Programmiersprachen",
+    "markupStyling": "Markup & Styling",
+    "frontendTechnologies": "Frontend-Technologien",
+    "backendTechnologies": "Backend-Technologien",
+    "databasesORMs": "Datenbanken & ORMs",
+    "devopsTools": "DevOps & Tools",
+    "designTools": "Design-Tools"
+  },
+  "projects": {
+    "title": "Projekte",
+    "showAll": "Alle Projekte anzeigen",
+    "showLess": "Weniger Projekte anzeigen",
+    "learnMore": "Mehr erfahren",
+    "aboutProject": "Über dieses Projekt",
+    "keyFeatures": "Hauptmerkmale",
+    "timeline": "Projekt-Zeitplan",
+    "developmentPeriod": "Entwicklungszeitraum",
+    "defaultTimeline": "3 Monate",
+    "status": "Status",
+    "completed": "Abgeschlossen",
+    "technicalHighlights": "Technische Highlights",
+    "viewCode": "Code ansehen",
+    "liveDemo": "Live-Demo"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Kontakt aufnehmen",
+    "description": "Schicken Sie mir eine E-Mail, wenn Sie in kontakt mit ir aufnehmen möchten!",
+    "email": "E-Mail",
+    "copyright": "© 2026 Mo's Portfolio.",
+    "myLinks": "Meine Links →"
+  },
+  "certificate": {
+    "title": "Zertifikate",
+    "viewCredential": "Zertifikat ansehen",
+    "items": {
+      "mcsa": {
+        "title": "Microsoft Certified Solutions Associate (MCSA): Database Development"
+      },
+      "azure": {
+        "title": "Azure Data Engineer Associate"
+      },
+      "sapAbap": {
+        "title": "SAP Certified - Back-End Developer - ABAP Cloud"
+      },
+      "sapImplementation": {
+        "title": "SAP Certified - Implementation Consultant - End-to-End Business Processes in SAP"
+      }
+    }
+  },
+  "education": {
+    "title": "Ausbildung",
+    "viewLink": "Link",
+    "items": [
+      {
+        "degree": "Master of Science (M.Sc.) in Betriebswirtschaftslehre, BTU",
+        "institution": "Brandenburgische Technische Universität Cottbus-Senftenberg (BTU)",
+        "location": "Cottbus, Deutschland",
+        "period": "10/2019 – 01/2025",
+        "institutionUrl": "https://www.b-tu.de/"
+      },
+      {
+        "degree": "Intensiv-Deutschkurs",
+        "institution": "Goethe-Institut",
+        "location": "Kairo, Ägypten",
+        "period": "01/2017 – 08/2017",
+        "description": "Teilnahme an einem intensiven Deutschsprachkurs zur Verbesserung der Deutschkenntnisse."
+      },
+      {
+        "degree": "Bachelor of Science (B.Sc.) in Betriebswirtschaftslehre, SCU",
+        "institution": "Suez University, Faculty of Commerce",
+        "location": "Suez, Ägypten",
+        "period": "10/2004 – 09/2009"
+      }
+    ]
+  },
+  "professionalDevelopment": {
+    "title": "SAP-ZERTIFIZIERUNGEN UND WEITERBILDUNG",
+    "viewLink": "Link",
+    "items": [
+      {
+        "degree": "SAP Anwendungsentwickler ABAP Cloud – Back-End",
+        "institution": "WBS Training",
+        "location": "Berlin, Deutschland",
+        "period": "06/2026 – 09/2026",
+        "details": [
+          "ABAP-Programmierung und objektorientierte Anwendungsentwicklung.",
+          "Entwicklung von Cloud-Anwendungen mit dem ABAP RESTful Application Programming Model (RAP).",
+          "Clean-Core-Prinzipien und Entwicklung kundenspezifischer Erweiterungen in SAP S/4HANA."
+        ],
+        "credentialUrl": "https://www.credly.com/badges/f9be73ab-b9eb-4327-b0f5-cddb355fd7bf/public_url"
+      },
+      {
+        "degree": "SAP integrierte End-to-End-Geschäftsprozesse",
+        "institution": "WBS Training",
+        "location": "Berlin, Deutschland",
+        "period": "09/2026 – 10/2026",
+        "details": [
+          "Record-to-Report: Finanzwesen und Controlling.",
+          "Recruit-to-Retire: Personalmanagement und SAP HCM.",
+          "Source-to-Pay: Beschaffung und Lieferantenmanagement.",
+          "Design-to-Operate: Produktentwicklung und Produktion.",
+          "Lead-to-Cash (Sales): Vertrieb und Auftragsabwicklung.",
+          "Lead-to-Cash (Service): Kundenservice und Serviceabwicklung."
+        ],
+        "credentialUrl": "https://www.credly.com/badges/053ce8ec-7a12-4fb9-9571-a9d4f19daad3/public_url"
+      },
+      {
+        "degree": ".NET Full-Stack-Entwickler",
+        "institution": "Route IT Training Center",
+        "location": "Kairo, Ägypten",
+        "period": "02/2022 – 11/2022",
+        "details": [
+          "Full-Stack-Webentwicklung mit C#, TypeScript, SQL, .NET Core, ASP.NET Core, Entity Framework, XAML, Node.js, React.js, Redux und RTK Query (State Management)."
+        ]
+      },
+      {
+        "degree": "MCSA: SQL 2016 Database Development",
+        "institution": "Microsoft",
+        "period": "12/2020",
+        "details": [
+          "Zertifizierung in SQL-Server-Datenbankentwicklung, relationalem Datenbankdesign und T-SQL.",
+          "Schwerpunkte: Datenbankprogrammierung, Datenbankobjekte und Datenverarbeitung."
+        ],
+        "credentialUrl": "https://www.credly.com/badges/031f72b9-19d5-415e-bd8e-cf21a476659d/public_url"
+      },
+      {
+        "degree": "Microsoft Certified: Azure Data Engineer Associate",
+        "institution": "Microsoft",
+        "period": "09/2020",
+        "details": [
+          "Datenintegration, Transformation und Verarbeitung von Daten mit Microsoft Azure.",
+          "Schwerpunkte: Datenpipelines, Cloud-Datenspeicherung und Data Engineering."
+        ],
+        "credentialUrl": "https://www.credly.com/badges/84cf25bb-edb4-43be-b048-c3a6b74771d0/public_url"
+      }
+    ]
+  },
+  "experience": {
+    "title": "Berufserfahrung",
+    "technologies": "Technologien",
+    "items": [
+      {
+        "position": ".NET- und React.js-Entwickler (Praktikum)",
+        "company": "Talabat",
+        "location": "Kairo, Ägypten",
+        "period": "02/2023 – 08/2023",
+        "description": [
+          "Entwicklung und Wartung von Webanwendungen mit C#, ASP.NET Core, Entity Framework und React.js."
+        ],
+        "technologies": ["C#", "ASP.NET Core", "Entity Framework", "React.js"]
+      },
+      {
+        "position": "Datenbankentwickler (SQL Server)",
+        "company": "3S Software",
+        "location": "Kairo, Ägypten",
+        "period": "09/2013 – 12/2016",
+        "description": [
+          "Entwicklung und Wartung von SQL-Server-Datenbanken zur Verbesserung der Abfrageleistung und Datenzuverlässigkeit.",
+          "Entwicklung von Data-Warehouse-Prozessen mit SQL Server Integration Services (SSIS) für Reporting und Analysen."
+        ],
+        "technologies": ["SQL Server", "SSIS"]
+      },
+      {
+        "position": "Buchhalter & Payroll",
+        "company": "Country Club Hotel",
+        "location": "Sharm El-Sheikh, Ägypten",
+        "period": "02/2010 – 07/2013",
+        "description": [
+          "Optimierung von Buchhaltungsabläufen und Prüfung von Transaktionen, Rechnungen und Zahlungen auf Richtigkeit und Einhaltung interner Vorgaben.",
+          "Pflege strukturierter und aktueller Finanzunterlagen sowie der zugehörigen Dokumentation."
+        ]
+      }
+    ]
+  },
+  "terminal": {
+    "welcome": "Willkommen im Portfolio-Terminal von Mo",
+    "helpPrompt": "Geben Sie 'help' ein, um die Fragen anzuzeigen.",
+    "questionPrompt": "Sie können auch eine Frage direkt eingeben.",
+    "availableQuestions": "Fragen, die ich beantworten kann:",
+    "questionLabel": "Frage:",
+    "answerLabel": "Antwort:",
+    "phone": "Telefon",
+    "questions": {
+      "profile": "Wer bist du?",
+      "skills": "Welche technischen Kenntnisse hast du?",
+      "certifications": "Welche SAP-Zertifizierungen und Weiterbildungen hast du?",
+      "education": "Welche Ausbildung hast du?",
+      "experience": "Welche Berufserfahrung hast du?",
+      "projects": "An welchen Projekten hast du gearbeitet?",
+      "contact": "Wie kann ich dich kontaktieren?"
+    },
+    "notFound": "Befehl '{{command}}' nicht gefunden.",
+    "helpText": "Geben Sie 'help' ein, um die Fragen anzuzeigen."
+  },
+  "common": {
+    "loading": "Lädt...",
+    "error": "Fehler",
+    "success": "Erfolg",
+    "close": "Schließen"
+  },
+  "footer": {
+    "rights": "Alle Rechte vorbehalten.",
+    "language": "Sprache",
+    "theme": "Thema",
+    "devMode": "Entwicklermodus"
+  }
+}

@@ -1,0 +1,229 @@
+{
+  "nav": {
+    "about": "Technical Skills",
+    "projects": "Projects",
+    "contact": "Contact",
+    "resume": "Resume",
+    "devMode": "Dev Mode",
+    "language": "Language"
+  },
+  "hero": {
+    "greeting": "Hey, It's Mo",
+    "title": "ABAP Cloud Developer",
+    "subtitle": "SAP",
+    "description": "An <sap>ABAP developer</sap> on a new path—a former .NET and C# enthusiast who now feels at home in the <sap>SAP world</sap>. <sap>SAP-certified back-end developer</sap> with full-stack experience in C#, .NET, and TypeScript. Focused on modern <sap>SAP full-stack development</sap>: backend with <sap>ABAP Cloud</sap>, <sap>SAP CAP</sap>, <sap>SAP BTP</sap>, and <sap>SAP S/4HANA on-premise</sap>, and frontend with <sap>SAPUI5 (Freestyle)</sap> and <sap>SAP Fiori elements</sap>.",
+    "cta": "Let's connect!",
+    "resume": "My resume"
+  },
+  
+  "about": {
+    "title": "Technical Skills",
+    "sapTechnologies": "SAP Technologies",
+    "programmingLanguages": "Programming Languages",
+    "markupStyling": "Markup & Styling",
+    "frontendTechnologies": "Frontend Technologies",
+    "backendTechnologies": "Backend Technologies",
+    "databasesORMs": "Databases & ORMs",
+    "devopsTools": "DevOps & Tools",
+    "designTools": "Design Tools"
+  },
+  "projects": {
+    "title": "Projects",
+    "showAll": "Show All Projects",
+    "showLess": "Show Less Projects",
+    "learnMore": "Learn more",
+    "aboutProject": "About This Project",
+    "keyFeatures": "Key Features",
+    "timeline": "Project Timeline",
+    "developmentPeriod": "Development Period",
+    "defaultTimeline": "3 months",
+    "status": "Status",
+    "completed": "Completed",
+    "technicalHighlights": "Technical Highlights",
+    "viewCode": "View Code",
+    "liveDemo": "Live Demo"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Get In Touch",
+    "description": "Shoot me an email if you want to connect!",
+    "email": "Email",
+    "copyright": "© 2026 Mo's Portfolio.",
+    "myLinks": "Links →"
+  },
+  "education": {
+    "title": "Education",
+    "viewLink": "Link",
+    "items": [
+      {
+        "degree": "Master of Science (M.Sc.) in Business Administration, BTU",
+        "institution": "Brandenburg University of Technology Cottbus-Senftenberg (BTU)",
+        "location": "Cottbus, Germany",
+        "period": "10/2021 – 01/2025",
+        "institutionUrl": "https://www.b-tu.de/"
+      },
+      {
+        "degree": "Intensive German Course",
+        "institution": "Goethe-Institut",
+        "location": "Cairo, Egypt",
+        "period": "10/2017 – 08/2018",
+        "description": "Completed an intensive German language course to improve German proficiency."
+      },
+      {
+        "degree": "Bachelor of Science (B.Sc.) in Business Administration, SCU",
+        "institution": "Suez University, Faculty of Commerce",
+        "location": "Suez, Egypt",
+        "period": "10/2004 – 09/2009"
+      }
+    ]
+  },
+  "professionalDevelopment": {
+    "title": "SAP Certifications and Professional Development",
+    "viewLink": "Link",
+    "items": [
+      {
+        "degree": "SAP Application Developer ABAP Cloud – Back End",
+        "institution": "WBS Training",
+        "location": "Berlin, Germany",
+        "period": "06/2026 – 09/2026",
+        "details": [
+          "ABAP programming and object-oriented application development.",
+          "Development of cloud applications with the ABAP RESTful Application Programming Model (RAP).",
+          "Clean Core principles and development of custom extensions in SAP S/4HANA."
+        ],
+        "credentialUrl": "https://www.credly.com/badges/f9be73ab-b9eb-4327-b0f5-cddb355fd7bf/public_url"
+      },
+      {
+        "degree": "SAP Integrated End-to-End Business Processes",
+        "institution": "WBS Training",
+        "location": "Berlin, Germany",
+        "period": "09/2026 – 10/2026",
+        "details": [
+          "Record-to-Report: Finance and Controlling.",
+          "Recruit-to-Retire: Human Resources Management and SAP HCM.",
+          "Source-to-Pay: Procurement and Supplier Management.",
+          "Design-to-Operate: Product Development and Manufacturing.",
+          "Lead-to-Cash (Sales): Sales and Order Management.",
+          "Lead-to-Cash (Service): Customer Service and Service Processing."
+        ],
+        "credentialUrl": "https://www.credly.com/badges/053ce8ec-7a12-4fb9-9571-a9d4f19daad3/public_url"
+      },
+      {
+        "degree": ".NET Full-Stack Developer",
+        "institution": "Route IT Training Center",
+        "location": "Cairo, Egypt",
+        "period": "02/2022 – 11/2022",
+        "details": [
+          "Full-stack web development with C#, TypeScript, SQL, .NET Core, ASP.NET Core, Entity Framework, XAML, Node.js, React.js, Redux, and RTK Query (state management)."
+        ]
+      },
+      {
+        "degree": "MCSA: SQL 2016 Database Development",
+        "institution": "Microsoft",
+        "period": "12/2020",
+        "details": [
+          "Certified in SQL Server database development, relational database design, and T-SQL.",
+          "Focus areas: database programming, database objects, and data processing."
+        ],
+        "credentialUrl": "https://www.credly.com/badges/031f72b9-19d5-415e-bd8e-cf21a476659d/public_url"
+      },
+      {
+        "degree": "Microsoft Certified: Azure Data Engineer Associate",
+        "institution": "Microsoft",
+        "period": "09/2020",
+        "details": [
+          "Data integration, transformation, and processing with Microsoft Azure.",
+          "Focus areas: data pipelines, cloud data storage, and data engineering."
+        ],
+        "credentialUrl": "https://www.credly.com/badges/84cf25bb-edb4-43be-b048-c3a6b74771d0/public_url"
+      }
+    ]
+  },
+  "certificate": {
+    "title": "Certificates",
+    "viewCredential": "View credential",
+    "items": {
+      "mcsa": {
+        "title": "Microsoft Certified Solutions Associate (MCSA): Database Development"
+      },
+      "azure": {
+        "title": "Azure Data Engineer Associate"
+      },
+      "sapAbap": {
+        "title": "SAP Certified - Back-End Developer - ABAP Cloud"
+      },
+      "sapImplementation": {
+        "title": "SAP Certified - Implementation Consultant - End-to-End Business Processes in SAP"
+      }
+    }
+  },
+  "experience": {
+    "title": "Work Experience",
+    "technologies": "Technologies",
+    "items": [
+      {
+        "position": ".NET & React.js Developer (Intern)",
+        "company": "Talabat",
+        "location": "Cairo, Egypt",
+        "period": "02/2023 – 08/2023",
+        "description": [
+          "Developed and maintained web applications using C#, ASP.NET Core, Entity Framework, and React.js."
+        ],
+        "technologies": ["C#", "ASP.NET Core", "Entity Framework", "React.js"]
+      },
+      {
+        "position": "Database Developer (SQL Server)",
+        "company": "3S Software",
+        "location": "Cairo, Egypt",
+        "period": "09/2013 – 12/2016",
+        "description": [
+          "Developed and maintained SQL Server databases to improve query performance and data reliability.",
+          "Built data warehouse processes with SQL Server Integration Services (SSIS) for reporting and analytics."
+        ],
+        "technologies": ["SQL Server", "SSIS"]
+      },
+      {
+        "position": "Accountant & Payroll",
+        "company": "Country Club Hotel",
+        "location": "Sharm El Sheikh, Egypt",
+        "period": "02/2010 – 07/2013",
+        "description": [
+          "Optimized accounting workflows and validated transactions, invoices, and payments to ensure accuracy and compliance.",
+          "Maintained structured and up-to-date financial records and supporting documentation."
+        ]
+      }
+    ]
+  },
+  "terminal": {
+    "welcome": "Welcome to Mo's Portfolio Terminal",
+    "helpPrompt": "Type 'help' to see the questions.",
+    "questionPrompt": "You can also type a question directly.",
+    "availableQuestions": "Questions I can answer:",
+    "questionLabel": "Question:",
+    "answerLabel": "Answer:",
+    "phone": "Phone",
+    "questions": {
+      "profile": "Who are you?",
+      "skills": "What technical skills do you have?",
+      "certifications": "Which SAP certifications and training have you completed?",
+      "education": "What is your education?",
+      "experience": "What work experience do you have?",
+      "projects": "What projects have you worked on?",
+      "contact": "How can I contact you?"
+    },
+    "notFound": "Command '{{command}}' not found.",
+    "helpText": "Type 'help' to see the questions."
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "close": "Close"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "language": "Language",
+    "theme": "Theme",
+    "devMode": "Dev Mode"
+  }
+}

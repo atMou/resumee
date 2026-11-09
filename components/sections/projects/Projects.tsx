@@ -1,0 +1,148 @@
+"use client";
+
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import SectionLayout from "../../shared/layout/SectionLayout";
+import SectionHeader from "../../shared/ui/SectionHeader";
+import ProjectCard from "./ProjectCard";
+
+const Projects = () => {
+  const [showAll, setShowAll] = useState(false);
+  const [projectsData, setProjectsData] = useState([]);
+  const { i18n, t } = useTranslation();
+  const INITIAL_PROJECTS_COUNT = 4;
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 80 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.3 },
+    },
+  };
+
+  const buttonVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.3, delay: 0.2 },
+    },
+  };
+
+  // Load language-specific projects data
+  useEffect(() => {
+    const loadProjectsData = async () => {
+      try {
+        const data = await import(
+          `../../../data/projects.${i18n.language}.json`
+        );
+        console.log("Loaded projects data:", data.default);
+        console.log("Number of projects:", data.default.length);
+        setProjectsData(data.default);
+      } catch (error) {
+        console.error("Error loading projects:", error);
+        // Fallback to English if language-specific file doesn't exist
+        const fallbackData = await import("../../../data/projects.en.json");
+        console.log("Fallback projects data:", fallbackData.default);
+        setProjectsData(fallbackData.default);
+      }
+    };
+
+    loadProjectsData();
+  }, [i18n.language]);
+
+  const displayedProjects = showAll
+    ? projectsData
+    : projectsData.slice(0, INITIAL_PROJECTS_COUNT);
+
+  const hasMoreProjects = projectsData.length > INITIAL_PROJECTS_COUNT;
+
+  console.log("Projects render - projectsData:", projectsData);
+  console.log("Projects render - displayedProjects:", displayedProjects);
+
+  const handleToggleProjects = () => {
+    setShowAll(!showAll);
+  };
+
+  return (
+    <SectionLayout id="projects">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={containerVariants}
+      >
+        <SectionHeader
+          title={t("projects.title")}
+          align="right"
+          overlayDelay={0.3}
+        />
+
+        {/* Projects Grid */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6"
+          variants={containerVariants}
+        >
+          <AnimatePresence mode="popLayout">
+            {displayedProjects.length === 0 && (
+              <div className="col-span-full text-center text-white p-8">
+                No projects to display. Loading...
+              </div>
+            )}
+            {displayedProjects.map((project) => {
+              console.log("Mapping project:", project.id, project.title);
+              return (
+                <ProjectCard
+                  key={project.id}
+                  project={project}
+                  variants={cardVariants}
+                />
+              );
+            })}
+          </AnimatePresence>
+        </motion.div>
+
+        {/* Load More/Less Button */}
+        {hasMoreProjects && (
+          <motion.div
+            className="flex justify-center mt-8 sm:mt-12"
+            variants={buttonVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <button
+              onClick={handleToggleProjects}
+              className="group flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-[#7300FF] to-[#9333ea] hover:from-[#5a00cc] hover:to-[#7c3aed] text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#7300FF]/25"
+            >
+              <span>
+                {showAll
+                  ? t("projects.showLess")
+                  : `${t("projects.showAll")} (${projectsData.length})`}
+              </span>
+              {showAll ? (
+                <ChevronUp className="w-5 h-5 group-hover:-translate-y-1 transition-transform" />
+              ) : (
+                <ChevronDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
+              )}
+            </button>
+          </motion.div>
+        )}
+      </motion.div>
+    </SectionLayout>
+  );
+};
+
+export default Projects;
