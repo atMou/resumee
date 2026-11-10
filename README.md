@@ -27,13 +27,13 @@ I hold an M.Sc. in Business Administration, specializing in managerial accountin
 ## Work Experience
 
 ### .NET & React.js Developer Intern — Talabat
-**Cairo, Egypt · February 2023 – January 2024**
+**Cairo, Egypt · February 2023 – August 2023**
 
 - Contributed to developing and maintaining web applications using C#, ASP.NET Core, Entity Framework, and React.js.
 - Collaborated with the team to implement features, fix bugs, and improve application performance.
 
-### Junior Database Developer (SQL Server) — 3S Software
-**Giza, Egypt · March 2014 – August 2017**
+### Database Developer (SQL Server) — 3S Software
+**Cairo, Egypt · March 2014 – August 2017**
 
 - Developed and maintained SQL Server databases, improving query performance and data reliability.
 - Designed and implemented SSIS data warehouse pipelines for reporting and analytics.
@@ -48,8 +48,7 @@ I hold an M.Sc. in Business Administration, specializing in managerial accountin
 
 - **SAP Certified – Implementation Consultant: End-to-End Business Processes in SAP** — SAP, issued October 2026  
   [View credential](https://www.credly.com/badges/053ce8ec-7a12-4fb9-9571-a9d4f19daad3/public_url)
-- **SAP Application Developer – ABAP Cloud Back End with SAP S/4HANA Integrated Business Processes** — WBS TRAINING SE, Berlin, Germany · June–October 2026  
-  910 instructional hours; overall result: 97% (grade 1, very good).  
+- **SAP Application Developer – ABAP Cloud Back End with SAP S/4HANA Integrated Business Processes** — WBS TRAINING SE, Berlin, Germany · June–October 2026.  
   [View credential](https://www.credly.com/badges/f9be73ab-b9eb-4327-b0f5-cddb355fd7bf/public_url)
 - **M.Sc. Business Administration** — Brandenburg University of Technology Cottbus-Senftenberg, Germany · 2021–2025  
   Specialization in managerial accounting and corporate finance.
